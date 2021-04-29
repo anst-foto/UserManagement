@@ -5,8 +5,103 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Authorization"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="500" 
+        ResizeMode="NoResize" WindowStyle="None"
+        Background="Transparent" AllowsTransparency="True">
     <Grid>
-
+        <Border 
+            Width="auto" Height="auto"
+            BorderBrush="Black" BorderThickness="2"
+            CornerRadius="50, 50, 50, 50"
+            MouseLeftButtonDown="UIElement_OnMouseLeftButtonDown" >
+            <Border.Background>
+                <LinearGradientBrush>
+                    <GradientBrush.GradientStops>
+                        <GradientStopCollection>
+                            <GradientStop Color="Khaki" Offset="0.0"/>
+                            <GradientStop Color="Aquamarine" Offset="0.5"/>
+                        </GradientStopCollection>
+                    </GradientBrush.GradientStops>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid>
+                <Label Content="Авторизация" 
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Top"
+                       Margin="0, 10, 0 , 0"
+                       FontFamily="Arial"
+                       FontSize="40" FontWeight="Black"
+                       Foreground="DarkRed" />
+                <TextBlock x:Name="LabelShow"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Top" 
+                       Margin="0,100,0,0"
+                       Width="420" FontSize="16"
+                       TextAlignment="Center" />
+                <TextBlock x:Name="LabelLogin" 
+                           Text="Логин" 
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Top" 
+                           Margin="40,162,0,0" 
+                           TextWrapping="Wrap" 
+                           FontSize="18"/>
+                <TextBox x:Name="InputLogin" 
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Top"
+                         Margin="0,191,0,0" 
+                         TextWrapping="Wrap"
+                         Width="420" FontSize="18"/>
+                <TextBlock x:Name="LabelPassword" 
+                           Text="Пароль" 
+                           HorizontalAlignment="Left" 
+                           VerticalAlignment="Top" 
+                           Margin="40,228,0,0" 
+                           TextWrapping="Wrap" FontSize="18"/>
+                <PasswordBox x:Name="InputPassword" 
+                             HorizontalAlignment="Center" 
+                             VerticalAlignment="Top"
+                             Margin="0,257,0,0" 
+                             Width="420" FontSize="18"/>
+                <Button x:Name="ButtonAuthorization"
+                        Content="Авторизоваться" 
+                        HorizontalAlignment="Left" 
+                        VerticalAlignment="Top"
+                        Margin="40,317,0,0" 
+                        FontSize="18" Width="150"
+                        BorderBrush="Black" Background="{x:Null}"
+                        IsEnabled="False"/>
+                <Button x:Name="ButtonClear" 
+                        Content="Очистить" 
+                        HorizontalAlignment="Left" 
+                        VerticalAlignment="Top"
+                        Margin="259,317,0,0" 
+                        FontSize="18" Width="110"
+                        Background="{x:Null}"/>
+                <Button x:Name="ButtonCancel" 
+                        Content="Отмена" 
+                        HorizontalAlignment="Left" VerticalAlignment="Top"
+                        Margin="374,317,0,0" 
+                        FontSize="18" Width="86"
+                        Background="{x:Null}" BorderBrush="Black" />
+                <TextBlock x:Name="LabelRestorePassword" 
+                           HorizontalAlignment="Left" VerticalAlignment="Top"
+                           Margin="315,370,0,0" 
+                           TextWrapping="Wrap" 
+                           FontSize="18" Width="145" 
+                           TextAlignment="Right" 
+                           Visibility="Visible">
+                    <Hyperlink x:Name="HyperRestorePassword">Забыли пароль</Hyperlink>
+                </TextBlock>
+                <TextBlock x:Name="LabelSignUp" 
+                           HorizontalAlignment="Left" VerticalAlignment="Top"
+                           Margin="40,370,0,0" 
+                           TextWrapping="Wrap" 
+                           FontSize="18" 
+                           Width="130" 
+                           TextAlignment="Left">
+                    <Hyperlink x:Name="HyperSignUp">Регистрация</Hyperlink>
+                </TextBlock>
+            </Grid>
+        </Border>
     </Grid>
 </Window>
