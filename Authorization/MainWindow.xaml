@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Authorization"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="500" 
+        Title="UserManagement" Height="450" Width="500" 
         ResizeMode="NoResize" WindowStyle="None"
         Background="Transparent" AllowsTransparency="True">
     <Grid>
@@ -50,7 +50,8 @@
                          VerticalAlignment="Top"
                          Margin="0,191,0,0" 
                          TextWrapping="Wrap"
-                         Width="420" FontSize="18"/>
+                         Width="420" FontSize="18"
+                         TextChanged="InputLogin_OnTextChanged"/>
                 <TextBlock x:Name="LabelPassword" 
                            Text="Пароль" 
                            HorizontalAlignment="Left" 
@@ -61,7 +62,8 @@
                              HorizontalAlignment="Center" 
                              VerticalAlignment="Top"
                              Margin="0,257,0,0" 
-                             Width="420" FontSize="18"/>
+                             Width="420" FontSize="18"
+                             PasswordChanged="InputPassword_OnPasswordChanged"/>
                 <Button x:Name="ButtonAuthorization"
                         Content="Авторизоваться" 
                         HorizontalAlignment="Left" 
@@ -69,20 +71,23 @@
                         Margin="40,317,0,0" 
                         FontSize="18" Width="150"
                         BorderBrush="Black" Background="{x:Null}"
-                        IsEnabled="False"/>
+                        IsEnabled="False"
+                        Click="ButtonAuthorization_OnClick"/>
                 <Button x:Name="ButtonClear" 
                         Content="Очистить" 
                         HorizontalAlignment="Left" 
                         VerticalAlignment="Top"
                         Margin="259,317,0,0" 
                         FontSize="18" Width="110"
-                        Background="{x:Null}"/>
+                        Background="{x:Null}"
+                        Click="ButtonClear_OnClick"/>
                 <Button x:Name="ButtonCancel" 
                         Content="Отмена" 
                         HorizontalAlignment="Left" VerticalAlignment="Top"
                         Margin="374,317,0,0" 
                         FontSize="18" Width="86"
-                        Background="{x:Null}" BorderBrush="Black" />
+                        Background="{x:Null}" BorderBrush="Black"
+                        Click="ButtonCancel_OnClick"/>
                 <TextBlock x:Name="LabelRestorePassword" 
                            HorizontalAlignment="Left" VerticalAlignment="Top"
                            Margin="315,370,0,0" 
