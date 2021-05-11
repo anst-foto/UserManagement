@@ -2,6 +2,7 @@
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
+using Check;
 
 namespace Authorization
 {
@@ -55,6 +56,7 @@ namespace Authorization
         private void InputPassword_1_OnPasswordChanged(object sender, RoutedEventArgs e)
         {
             CheckEmptyPasswords();
+            PasswordCheckCurrent();
             
             CorrectedInput();
         }
@@ -111,7 +113,7 @@ namespace Authorization
 
         private void CorrectedInput()
         {
-            if (_isNotEmptyLogin && _isEqualPasswords && _isNotEmptyPassword && _isNotEmptyEmail)
+            if (_isNotEmptyLogin && _isEqualPasswords && _isNotEmptyPassword && _isCheckPassword && _isNotEmptyEmail)
             {
                 ButtonRegistration.IsEnabled = true;
             }
@@ -126,6 +128,31 @@ namespace Authorization
             _isNotEmptyEmail = InputEmail.Text != string.Empty;
             
             CorrectedInput();
+        }
+
+        private void PasswordCheckCurrent()
+        {
+            var password = InputPassword_1.Password;
+            
+            var checkPass = new CheckPassword();
+            var check1 = checkPass.MinLength(password);
+            var check2 = checkPass.Difficult(password);
+            var check3 = checkPass.CheckAlphabet(password);
+
+            if (check1 && check2 && check3)
+            {
+                LabelShow.Foreground = Brushes.Green;
+                LabelShow.Text = "Пароль соответствует требованиям";
+                
+                _isCheckPassword = true;
+            }
+            else
+            {
+                LabelShow.Foreground = Brushes.Red;
+                LabelShow.Text = "Пароли не соответствует требованиям";
+                
+                _isCheckPassword = false;
+            }
         }
     }
 }
