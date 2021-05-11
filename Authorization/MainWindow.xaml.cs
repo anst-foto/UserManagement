@@ -1,23 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Authorization
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -82,6 +69,14 @@ namespace Authorization
                 LabelShow.Foreground = Brushes.Red;
                 LabelShow.Text = "Неверный логин или пароль";
             }
+        }
+
+        private void HyperSignUp_OnClick(object sender, RoutedEventArgs e)
+        {
+            var regForm = new Registration();
+            regForm.Show();
+            
+            Close();
         }
     }
 }
