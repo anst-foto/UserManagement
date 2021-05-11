@@ -12,7 +12,8 @@
         <Border 
             Width="auto" Height="auto"
             BorderBrush="Black" BorderThickness="2"
-            CornerRadius="50, 50, 50, 50">
+            CornerRadius="50, 50, 50, 50"
+            MouseLeftButtonDown="UIElement_OnMouseLeftButtonDown">
             <Border.Background>
                 <LinearGradientBrush>
                     <GradientBrush.GradientStops>
@@ -49,7 +50,8 @@
                          VerticalAlignment="Top"
                          Margin="40,126,0,0" 
                          TextWrapping="Wrap"
-                         Width="420" FontSize="18"/>
+                         Width="420" FontSize="18"
+                         TextChanged="InputLogin_OnTextChanged"/>
                 <TextBlock x:Name="LabelPassword_1" 
                            Text="Пароль" 
                            HorizontalAlignment="Left" 
@@ -60,7 +62,8 @@
                              HorizontalAlignment="Left" 
                              VerticalAlignment="Top"
                              Margin="40,191,0,0" 
-                             Width="420" FontSize="18"/>
+                             Width="420" FontSize="18"
+                             PasswordChanged="InputPassword_1_OnPasswordChanged"/>
                 <TextBlock x:Name="LabelPassword_2" 
                            Text="Повторите пароль" 
                            HorizontalAlignment="Left" 
@@ -71,7 +74,8 @@
                              HorizontalAlignment="Left" 
                              VerticalAlignment="Top"
                              Margin="40,246,0,0" 
-                             Width="420" FontSize="18"/>
+                             Width="420" FontSize="18"
+                             PasswordChanged="InputPassword_2_OnPasswordChanged"/>
                 <TextBlock x:Name="LabelEmail" 
                            Text="e-mail" 
                            HorizontalAlignment="Left" 
@@ -79,16 +83,17 @@
                            Margin="40,277,0,0" 
                            TextWrapping="Wrap" FontSize="18"/>
                 <TextBox x:Name="InputEmail" 
-                         HorizontalAlignment="Center" 
+                         HorizontalAlignment="Left" 
                          VerticalAlignment="Top"
                          Margin="40,306,0,0" 
-                         Width="420" FontSize="18"/>
+                         Width="420" FontSize="18"
+                         TextChanged="InputEmail_OnTextChanged"/>
                 <Button x:Name="ButtonRegistration"
                         Content="Зарегистрироваться" 
                         HorizontalAlignment="Left" 
                         VerticalAlignment="Top"
                         Margin="40,348,0,0" 
-                        FontSize="18" Width="170"
+                        FontSize="18" Width="180"
                         BorderBrush="Black" Background="{x:Null}"
                         IsEnabled="False"/>
                 <Button x:Name="ButtonClear" 
@@ -97,13 +102,15 @@
                         VerticalAlignment="Top"
                         Margin="252,348,0,0" 
                         FontSize="18" Width="110"
-                        Background="{x:Null}"/>
+                        Background="{x:Null}"
+                        Click="ButtonClear_OnClick"/>
                 <Button x:Name="ButtonCancel" 
                         Content="Отмена" 
                         HorizontalAlignment="Left" VerticalAlignment="Top"
                         Margin="376,348,0,0" 
                         FontSize="18" Width="86"
-                        Background="{x:Null}" BorderBrush="Black"/>
+                        Background="{x:Null}" BorderBrush="Black"
+                        Click="ButtonCancel_OnClick"/>
                 <TextBlock x:Name="LabelRestorePassword" 
                            HorizontalAlignment="Left" VerticalAlignment="Top"
                            Margin="315,387,0,0" 
@@ -120,7 +127,7 @@
                            FontSize="18" 
                            Width="130" 
                            TextAlignment="Left">
-                    <Hyperlink x:Name="HyperSignIn">Авторизация</Hyperlink>
+                    <Hyperlink x:Name="HyperSignIn" Click="HyperSignIn_OnClick">Авторизация</Hyperlink>
                 </TextBlock>
             </Grid>
         </Border>
