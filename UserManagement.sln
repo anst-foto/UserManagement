@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Authorization", "Authorization\Authorization.csproj", "{EAC9A252-4178-4824-86FB-E236D2FC4A37}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Check", "Check\Check.csproj", "{4075D6BE-3617-47DC-B082-48D93C9D73BB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{EAC9A252-4178-4824-86FB-E236D2FC4A37}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EAC9A252-4178-4824-86FB-E236D2FC4A37}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EAC9A252-4178-4824-86FB-E236D2FC4A37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4075D6BE-3617-47DC-B082-48D93C9D73BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4075D6BE-3617-47DC-B082-48D93C9D73BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4075D6BE-3617-47DC-B082-48D93C9D73BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4075D6BE-3617-47DC-B082-48D93C9D73BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
